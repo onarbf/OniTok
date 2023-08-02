@@ -13,7 +13,14 @@ body{
 }
 
 main{
-  border: 1px solid white;
   height: 60vh;
   aspect-ratio: 9/16;
+}
+
+html{
+  box-sizing: border-box;
+}
+
+*,*:before, *:after{
+  box-sizing: border-box;
 }
