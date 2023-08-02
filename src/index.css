@@ -12,10 +12,7 @@ body{
   -webkite-osx-font-smoothing: grayscale;
 }
 
-main{
-  height: 60vh;
-  aspect-ratio: 9/16;
-}
+
 
 html{
   box-sizing: border-box;

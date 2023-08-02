@@ -1,11 +1,11 @@
 import './App.css'
-import VideoPlayer from './components/VideoPlayer'
+import VideoFeed from './components/VideoFeed'
 
 function App (): JSX.Element {
   return (
     <div className="App">
       <main>
-      <VideoPlayer/>
+      <VideoFeed/>
       </main>
     </div>
   )
