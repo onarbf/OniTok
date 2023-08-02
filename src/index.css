@@ -1,0 +1,19 @@
+@font-face{
+  font-family: 'TikTokFont';
+  src: '/assets/TikTokFont-Regular.woff2';
+  format: 'woff2';
+  font-weight: 400;
+}
+
+body{
+  margin: 0;
+  font-family: 'TikTokFont', Arial, Tahoma, PingFangSC, 'sans-serif', 'Segoe UI Emoji', 'Noto Emoji';
+  -webkit-font-smoothing: antialiased;
+  -webkite-osx-font-smoothing: grayscale;
+}
+
+main{
+  border: 1px solid white;
+  height: 60vh;
+  aspect-ratio: 9/16;
+}
