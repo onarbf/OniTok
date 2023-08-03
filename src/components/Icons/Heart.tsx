@@ -1,7 +1,7 @@
 interface Props {
-  fill: 'string'
+  fill?: string
 }
-export default function Heart ({ fill = currentColor }: Props): JSX.Element {
+export default function Heart ({ fill = 'currentColor' }: Props): JSX.Element {
   return (
         <svg viewBox="0 0 48 48" fill={fill} xmlns="http://www.w3.org/2000/svg" width="32px">
             <g filter="url(#Icon_Color-Like_Shadow_Alt_1_svg__b)" clipPath="url(#Icon_Color-Like_Shadow_Alt_1_svg__a)">

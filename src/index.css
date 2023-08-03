@@ -5,6 +5,22 @@
   font-weight: 400;
 }
 
+@font-face{
+  font-family: 'TikTokFont';
+  src: '/assets/TikTokFont-Bold.woff2';
+  format: 'woff2';
+  font-weight: 700;
+}
+
+@font-face{
+  font-family: 'TikTokFont';
+  src: '/assets/TikTokFont-Semibold.woff2';
+  format: 'woff2';
+  font-weight: 600;
+}
+
+
+
 body{
   margin: 0;
   font-family: 'TikTokFont', Arial, Tahoma, PingFangSC, 'sans-serif', 'Segoe UI Emoji', 'Noto Emoji';

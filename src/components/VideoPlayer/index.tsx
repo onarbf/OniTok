@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
 import styles from './styles.module.css'
 import clsx from 'clsx'
-import Heart from '../Icons/Heart'
 import VideoPlayerActions from './VideoPlayerActions'
+import VideoDescription from '../VideoDescription'
 
 interface Props {
   video: Video
@@ -26,9 +26,10 @@ export default function VideoPlayer ({ video }: Props): JSX.Element {
   return (
 
     <div className={styles.wrapper}>
-    <video ref={videoRef} className={styles.video} autoPlay muted src={video.url} controls={false} onClick={togglePlay}/>
-    <i className={playerClassName} onClick={togglePlay}/>
-    <VideoPlayerActions/>
+      <video ref={videoRef} className={styles.video} autoPlay muted src={video.url} controls={false} onClick={togglePlay}/>
+      <i className={playerClassName} onClick={togglePlay}/>
+      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares}/>
+      <VideoDescription author={video.author} description={video.description} song={video.song} albumCover={video.albumCover}/>
     </div>
   )
 }
