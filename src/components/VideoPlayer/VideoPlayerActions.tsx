@@ -2,14 +2,16 @@ import styles from './styles.module.css'
 import Heart from '../Icons/Heart'
 import Comment from '../Icons/Comment'
 import Share from '../Icons/Share'
+import Plus from '../Icons/Plus'
 
 interface Props {
   likes: Video['likes']
   comments: Video['comments']
   shares: Video['shares']
+  avatar: User['avatar']
 
 }
-export default function VideoPlayerActions ({ likes = 1212, comments = 123, shares = 3123 }: Props): JSX.Element {
+export default function VideoPlayerActions ({ likes, comments, shares, avatar }: Props): JSX.Element {
   const handleLike = (): void => {
     alert('like')
   }
@@ -23,6 +25,13 @@ export default function VideoPlayerActions ({ likes = 1212, comments = 123, shar
 
   return (
         <aside className={styles.actions}>
+          <button onClick={handleLike} className={styles.avatar}>
+                <img src={avatar} />
+                <span>
+                  <Plus/>
+                </span>
+
+            </button>
             <button onClick={handleLike} className={styles.action}>
                 <Heart/>
                 <strong>{likes}</strong>

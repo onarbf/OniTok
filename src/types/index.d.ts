@@ -1,11 +1,16 @@
 interface Video {
   id: number
-  author: string
+  username: string
   description: string
   likes: number
   comments: number
   shares: number
   song: string
   albumCover: string
-  url: string
+  src: string
+}
+
+interface User {
+  username: string
+  avatar: string
 }

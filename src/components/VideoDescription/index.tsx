@@ -2,15 +2,15 @@ import AlbumDisk from './AlbumDisk'
 import SongTicker from './SongTicker'
 import styles from './styles.module.css'
 interface Props {
-  author: Video['author']
+  username: Video['username']
   description: Video['description']
   song: Video['song']
   albumCover: Video['albumCover']
 }
-export default function VideoDescription ({ author, description, song, albumCover }: Props): JSX.Element {
+export default function VideoDescription ({ username, description, song, albumCover }: Props): JSX.Element {
   return (<footer className={styles.footer}>
     <div className={styles.textWrapper}>
-    <h5>@{author}</h5>
+    <h5>@{username}</h5>
     <p>{description}</p>
     <SongTicker song={song}/>
     </div>

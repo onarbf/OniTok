@@ -26,10 +26,10 @@ export default function VideoPlayer ({ video }: Props): JSX.Element {
   return (
 
     <div className={styles.wrapper}>
-      <video ref={videoRef} className={styles.video} autoPlay muted src={video.url} controls={false} onClick={togglePlay}/>
+      <video ref={videoRef} className={styles.video} autoPlay muted src={video.src} controls={false} onClick={togglePlay}/>
       <i className={playerClassName} onClick={togglePlay}/>
-      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares}/>
-      <VideoDescription author={video.author} description={video.description} song={video.song} albumCover={video.albumCover}/>
+      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares} avatar={video.user.avatar}/>
+      <VideoDescription username={video.username} description={video.description} song={video.song} albumCover={video.albumCover}/>
     </div>
   )
 }
