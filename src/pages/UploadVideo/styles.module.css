@@ -1,0 +1,23 @@
+.wrapper{
+    color: white;
+    border: 1px solid white;
+}
+
+
+.uploadVideo {
+paddding: 16px;
+
+}
+
+.uploadVideo h1{
+    font-size: 48px;
+    font-weight: 800;
+}
+.uploadVideo label{
+    display: block;
+    margin-bottom: 16px;
+}
+.uploadVideo p{
+display: flex;
+flex-direction: column;
+}

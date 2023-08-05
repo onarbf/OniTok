@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import styles from './styles.module.css'
 import clsx from 'clsx'
 import VideoPlayerActions from './VideoPlayerActions'
 import VideoDescription from '../VideoDescription'
+import useIntersectionVideoPlayer from '../../hooks/useIntersectionVideoPlayer'
 
 interface Props {
   video: Video
@@ -10,15 +11,7 @@ interface Props {
 
 export default function VideoPlayer ({ video }: Props): JSX.Element {
   const videoRef = useRef<HTMLVideoElement>(null!)
-  const [playing, setPlaying] = useState(true)
-
-  const togglePlay = (): void => {
-    playing
-      ? void videoRef.current.pause()
-      : void videoRef.current.play()
-
-    setPlaying(!playing)
-  }
+  const { playing, handlePlay } = useIntersectionVideoPlayer({ videoRef })
 
   const playerClassName = clsx(styles.player, {
     [styles.hidden]: playing
@@ -26,10 +19,10 @@ export default function VideoPlayer ({ video }: Props): JSX.Element {
   return (
 
     <div className={styles.wrapper}>
-      <video ref={videoRef} className={styles.video} autoPlay muted src={video.src} controls={false} onClick={togglePlay}/>
-      <i className={playerClassName} onClick={togglePlay}/>
-      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares} avatar={video.user.avatar}/>
-      <VideoDescription username={video.username} description={video.description} song={video.song} albumCover={video.albumCover}/>
+      <video ref={videoRef} className={styles.video} autoPlay muted src={video.src} controls={false} onClick={handlePlay}/>
+      <i className={playerClassName} onClick={handlePlay}/>
+      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares} avatar={video.profile_id.avatar}/>
+      <VideoDescription username={video.profile_id.username} description={video.description} song={video.songTitle} albumCover={video.albumCover}/>
     </div>
   )
 }

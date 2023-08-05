@@ -14,7 +14,7 @@ export default function VideoDescription ({ username, description, song, albumCo
     <p>{description}</p>
     <SongTicker song={song}/>
     </div>
-    <div>
+    <div className={styles.albumWrapper}>
         <AlbumDisk albumCover={albumCover}/>
     </div>
     </footer>)

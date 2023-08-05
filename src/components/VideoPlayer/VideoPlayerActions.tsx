@@ -3,6 +3,7 @@ import Heart from '../Icons/Heart'
 import Comment from '../Icons/Comment'
 import Share from '../Icons/Share'
 import Plus from '../Icons/Plus'
+import { createUser } from '../../services'
 
 interface Props {
   likes: Video['likes']
@@ -11,9 +12,11 @@ interface Props {
   avatar: User['avatar']
 
 }
-export default function VideoPlayerActions ({ likes, comments, shares, avatar }: Props): JSX.Element {
+
+export default function VideoPlayerActions ({ likes = 300, comments = 300, shares = 300, avatar }: Props): JSX.Element {
   const handleLike = (): void => {
-    alert('like')
+    console.log('like')
+    createUser().then(res => console.log(res)).catch(e => console.log(e))
   }
 
   const handleComment = (): void => {

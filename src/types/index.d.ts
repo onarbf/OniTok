@@ -8,6 +8,7 @@ interface Video {
   song: string
   albumCover: string
   src: string
+  user: any
 }
 
 interface User {

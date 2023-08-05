@@ -7,7 +7,6 @@ interface Props {
 export default function VideoFeed ({ videos }: Props): JSX.Element {
   return (<section>
         {videos.map(video => {
-          console.log('video', video)
           return (<div className={styles.item} key={video.id}>
             <VideoPlayer video={video} />
           </div>)
