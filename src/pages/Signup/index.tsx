@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './styles.module.css'
-import { createUser } from '../../services'
+import { createProfile, createUser, updateUser } from '../../services'
 
 export default function Signup (): JSX.Element {
   const [email, setEmail] = useState('')
@@ -9,8 +9,15 @@ export default function Signup (): JSX.Element {
 
   const handleSubmit = (): void => {
     createUser({ email, password, passwordRepeated })
-      .then((res) => {
+      .then(async (res) => {
+        const [error, data] = res
+        const user = data.user
         console.log(res, 'user created successfully')
+        createProfile({ user_id: user.id, email: user.email }).then(async (res) => {
+          const [error, data] = res
+          const { profile } = data
+          await updateUser({ email, profile_id: profile.id })
+        })
       })
       .catch(err => err)
   }

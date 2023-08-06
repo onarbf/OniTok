@@ -28,13 +28,13 @@ export default function VideoPlayerActions ({ likes = 300, comments = 300, share
 
   return (
         <aside className={styles.actions}>
-          <button onClick={handleLike} className={styles.avatar}>
+          {avatar && <button onClick={handleLike} className={styles.avatar}>
                 <img src={avatar} />
                 <span>
                   <Plus/>
                 </span>
 
-            </button>
+            </button>}
             <button onClick={handleLike} className={styles.action}>
                 <Heart/>
                 <strong>{likes}</strong>

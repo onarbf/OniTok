@@ -21,8 +21,8 @@ export default function VideoPlayer ({ video }: Props): JSX.Element {
     <div className={styles.wrapper}>
       <video ref={videoRef} className={styles.video} autoPlay muted src={video.src} controls={false} onClick={handlePlay}/>
       <i className={playerClassName} onClick={handlePlay}/>
-      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares} avatar={video.profile_id.avatar}/>
-      <VideoDescription username={video.profile_id.username} description={video.description} song={video.songTitle} albumCover={video.albumCover}/>
+      <VideoPlayerActions likes={video.likes} comments={video.comments} shares={video.shares} avatar={''}/>
+      <VideoDescription username={'Pleistoceno'} description={video.description} song={video.songTitle} albumCover={video.albumCover}/>
     </div>
   )
 }
